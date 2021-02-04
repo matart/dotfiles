@@ -1,5 +1,9 @@
-export ZSH="/Users/mathew/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
+export ZSH="$HOME/.oh-my-zsh"
+if [ $SPIN ]; then
+    ZSH_THEME="spin"
+else
+    ZSH_THEME="robbyrussell"
+fi
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"

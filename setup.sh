@@ -21,4 +21,7 @@ ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim
 # Install vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-nvim +PlugInstall +qall
+nvim --headless +PlugInstall +qall
+# install theme
+mkdir -p ~/.oh-my-zsh/custom/themes
+ln -sf ~/dotfiles/spin.zsh-theme ~/.oh-my-zsh/custom/themes/spin.zsh-theme
