@@ -19,3 +19,5 @@ export PATH="/usr/local/share/chruby:$PATH"
 
 alias v="nvim"
 alias vs="dev cd shopify && v ."
+alias rgc="rg --glob='!test' --glob='!spec'"
+alias rgt="rg --glob='*_test.rb'"

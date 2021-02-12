@@ -18,6 +18,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'bronson/vim-visual-star-search'
+Plug 'tpope/vim-rhubarb'
 
 call plug#end()
 
