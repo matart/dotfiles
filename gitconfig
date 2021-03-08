@@ -24,3 +24,4 @@
 	r = reset --soft HEAD^1
 	rhard = reset --hard HEAD^1
 	ne = commit -a --amend --no-edit
+	update = !git fetch && git pull
