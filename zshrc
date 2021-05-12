@@ -29,12 +29,12 @@ alias rgt="rg --glob='*_test.rb'"
 function enable_beta() {
 	if [ ! -f ./bin/rails ]; then
 	    LOC=$(pwd)
-	    echo "Cannot find ./bin/rails from \"$LOC\""
+	    echo $fg_bold[red] "Cannot find ./bin/rails from \"$LOC\""
 	    return 1
 	fi
 	if [ -z $1 ]; then
-		echo "You need to supply a beta flag"
-		return 1
+	    echo $fg_bold[red] "You need to supply a beta flag"
+    	    return 1
 	fi
 	    
 	./bin/rails dev:betas:enable BETA=$1
@@ -44,12 +44,12 @@ function enable_beta() {
 function disable_beta() {
 	if [ ! -f ./bin/rails ]; then
 	    LOC=$(pwd)
-	    echo "Cannot find ./bin/rails from \"$LOC\""
+	    echo $fg_bold[red] "Cannot find ./bin/rails from \"$LOC\""
 	    return 1
 	fi
 	if [ -z $1 ]; then
-		echo "You need to supply a beta flag"
-		return 1
+	    echo $fg_bold[red] "You need to supply a beta flag"
+    	    return 1
 	fi
 	
 	./bin/rails dev:betas:disable BETA=$1
@@ -69,4 +69,19 @@ function subscriptions_setup() {
 	./bin/rails dev:shopify_payments:setup SHOP_ID=1 COUNTRY=US
 
 	return 0
+}
+
+function payment_toggle() {
+	if [ $1 = 'on' ]; then
+	dev integration enable ShopifyUS/hosted-fields
+	dev integration enable ShopifyUS/cardsink
+	dev integration enable ShopifyUS/cardserver
+elif
+	[ $1 = 'off' ]; then
+	dev integration disable ShopifyUS/hosted-fields
+	dev integration disable ShopifyUS/cardsink
+	dev integration disable ShopifyUS/cardserver
+else
+	echo "Must choose on or off"
+	fi
 }
