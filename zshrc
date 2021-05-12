@@ -27,25 +27,35 @@ alias rgt="rg --glob='*_test.rb'"
 
 # Shopify Functions
 function enable_beta() {
-	if [ -f ./bin/rails ]; then
-	    ./bin/rails dev:betas:enable BETA=$1
-	else
+	if [ ! -f ./bin/rails ]; then
 	    LOC=$(pwd)
 	    echo "Cannot find ./bin/rails from \"$LOC\""
 	    return 1
 	fi
+	if [ -z $1 ]; then
+		echo "You need to supply a beta flag"
+		return 1
+	fi
+	    
+	./bin/rails dev:betas:enable BETA=$1
 	return 0
 } 
+
 function disable_beta() {
-	if [ -f ./bin/rails ]; then
-	    ./bin/rails dev:betas:disable BETA=$1
-    	else
+	if [ ! -f ./bin/rails ]; then
 	    LOC=$(pwd)
 	    echo "Cannot find ./bin/rails from \"$LOC\""
 	    return 1
 	fi
+	if [ -z $1 ]; then
+		echo "You need to supply a beta flag"
+		return 1
+	fi
+	
+	./bin/rails dev:betas:disable BETA=$1
 	return 0
 }
+
 function subscriptions_setup() {
 	if [ ! -f ./bin/rails ]; then
 	    LOC=$(pwd)
