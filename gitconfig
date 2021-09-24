@@ -25,3 +25,4 @@
 	rhard = reset --hard HEAD^1
 	ne = commit -a --amend --no-edit
 	update = !git fetch && git pull
+	force = push --force-with-lease
