@@ -23,6 +23,10 @@ alias v="nvim"
 alias vs="dev cd shopify && v ."
 alias rgc="rg --glob='!test' --glob='!spec'"
 alias rgt="rg --glob='*_test.rb'"
+alias dev_style='./bin/style'
+alias dev_style_all='./bin/style --include-branch-commits'
+alias dev_test='./bin/test'
+alias dev_tc='./bin/srb tc'
 
 
 # Shopify Functions
@@ -65,7 +69,6 @@ function subscriptions_setup() {
 	echo "Setting up subs for SPIN"
 	./bin/rails dev:create_apps
 	./bin/rails dev:subscriptions:setup
-	./bin/rails dev:subscriptions:install_prototype_theme
 	./bin/rails dev:shopify_payments:setup SHOP_ID=1 COUNTRY=US
 
 	return 0
