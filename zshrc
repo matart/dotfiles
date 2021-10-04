@@ -27,6 +27,7 @@ alias dev_style='./bin/style'
 alias dev_style_all='./bin/style --include-branch-commits'
 alias dev_test='./bin/test'
 alias dev_tc='./bin/srb tc'
+alias dev_rbi='./bin/tapioca dsl'
 alias dev_packages='./bin/packwerk update-deprecations'
 
 
