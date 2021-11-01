@@ -24,3 +24,4 @@
 	update = !git fetch && git pull
 	force = push --force-with-lease
 	amend = commit -a --amend
+	conflicts = diff --name-only --diff-filter=U
