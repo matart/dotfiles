@@ -18,10 +18,14 @@ fi
 mkdir -p ~/.config/nvim
 ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim
 
+if [ $SPIN ]; then
 # Install vim-plug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-nvim --headless +"colorscheme blue" +PlugInstall +qall
+	nvim --headless +"colorscheme blue" +PlugInstall +qall
+fi
+
 # install theme
 mkdir -p ~/.oh-my-zsh/custom/themes
 ln -sf ~/dotfiles/spin.zsh-theme ~/.oh-my-zsh/custom/themes/spin.zsh-theme
+ln -sf ~/dotfiles/dracula-theme/* ~/.oh-my-zsh/custom/themes/
