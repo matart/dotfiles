@@ -56,10 +56,16 @@ dracula_test_git_optional_lock() {
 DRACULA_GIT_NOLOCK=${DRACULA_GIT_NOLOCK:-$(dracula_test_git_optional_lock)}
 # }}}
 
+if [ $SPIN ]; then
+    PROMPT="SPIN "
+else
+    PROMPT=""
+fi
+
 # Status segment {{{
 # arrow is green if last command was successful, red if not, 
 # turns yellow in vi command mode
-PROMPT='%(1V:%F{yellow}:%(?:%F{green}:%F{red}))${DRACULA_ARROW_ICON}'
+PROMPT+='%(1V:%F{yellow}:%(?:%F{green}:%F{red}))${DRACULA_ARROW_ICON}'
 # }}}
 
 # Time segment {{{
