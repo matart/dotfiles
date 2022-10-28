@@ -13,5 +13,8 @@
 	force = push --force-with-lease
 	amend = commit -a --amend
 	conflicts = diff --name-only --diff-filter=U
+	ls = ls-files
+	addall = add -A .
+	graph = log --graph -9 --branches --remotes --tags --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
 [include]
 	path = /Users/mathew/.config/dev/gitconfig

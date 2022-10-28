@@ -12,6 +12,8 @@ if [ $SPIN ]; then
     sudo apt-get install -y neovim
     sudo apt-get install -y fzf
     sudo apt-get install -y ripgrep
+    sudo apt-get install -y bat
+    sudo apt-get install -y git-delta
 fi
 
 # Copy config
