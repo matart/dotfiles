@@ -43,7 +43,7 @@ colorscheme OceanicNext
 " 
 " " This allows you to run :TS and it will search for the file name. Helpful in
 " " ruby with the naming convention
-command! -nargs=* TS call fzf#run(fzf#wrap({ 'options': '--query ' . '"' . expand("%:t") . ' test"' }))
+command! -nargs=* TS call fzf#run(fzf#wrap({ 'options': '--query ' . '"' . expand("%:t") . ' test.rb$"' }))
 " map <C-s> <esc>:w<CR>
 " imap <C-s> <esc>:w<CR>
 " map <C-t> <esc>:tabnew<CR>
