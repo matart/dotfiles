@@ -11,8 +11,8 @@ Plug 'preservim/nerdtree' " File viewer
 Plug 'rafi/awesome-vim-colorschemes' " Colorschemes
 Plug 'airblade/vim-gitgutter' " Adds changed lines in the right gutter
 Plug 'vim-airline/vim-airline' " Adds line at the bottom of the 
-" Plug 'wellle/targets.vim'
-" Plug 'junegunn/vim-peekaboo'
+Plug 'wellle/targets.vim'
+Plug 'junegunn/vim-peekaboo'
 " Plug 'tpope/vim-rails'
 " Plug 'junegunn/gv.vim'
 " Plug 'ryanoasis/vim-devicons'
@@ -43,15 +43,14 @@ colorscheme OceanicNext
 " 
 " " This allows you to run :TS and it will search for the file name. Helpful in
 " " ruby with the naming convention
-" command! -nargs=* TS call fzf#run(fzf#wrap({ 'options': '--query ' . '"' . expand("%:t") . ' test"' }))
+command! -nargs=* TS call fzf#run(fzf#wrap({ 'options': '--query ' . '"' . expand("%:t") . ' test"' }))
 " map <C-s> <esc>:w<CR>
 " imap <C-s> <esc>:w<CR>
-" " map <C-t> <esc>:tabnew<CR>
-" 
+" map <C-t> <esc>:tabnew<CR>
 map <C-h> :nohl<CR>
-" map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
-" map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
-" map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
+map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 " 
 " 
 " command! -bang -nargs=* Rgp
