@@ -14,10 +14,22 @@ Plug 'vim-airline/vim-airline' " Adds line at the bottom of the
 Plug 'wellle/targets.vim' " extended targets to change text
 Plug 'junegunn/vim-peekaboo' " opens side panel with register values
 Plug 'junegunn/gv.vim' " git commit viewer
+Plug 'jeetsukumaran/vim-buffergator'
 " Plug 'tpope/vim-rails'
 " Plug 'ryanoasis/vim-devicons'
 " Plug 'bronson/vim-visual-star-search'
-
+Plug 'AndrewRadev/splitjoin.vim'
+" Plug 'arthurxavierx/vim-caser'
+" Plug 'benmills/vimux'
+" Plug 'dewyze/vim-ruby-block-helpers'
+" Plug 'dewyze/vim-tada'
+" Plug 'edkolev/tmuxline.vim'
+" Plug 'github/copilot.vim'
+Plug 'henrik/vim-indexed-search'
+Plug 'janko-m/vim-test'
+Plug 'kana/vim-textobj-user'
+Plug 'tpope/vim-surround'
+Plug 'vim-ruby/vim-ruby'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -28,7 +40,7 @@ let g:LanguageClient_serverCommands = {
       \ 'typescript': ['typescript-language-server', '--stdio'],
       \ 'typescriptreact': ['typescript-language-server', '--stdio'],
       \ }
-Plug 'Shopify/vim-sorbet', { 'branch': 'main' } " Turns sorbet signatures to comment colorscheme	
+" Plug 'Shopify/vim-sorbet', { 'branch': 'main' } " Turns sorbet signatures to comment colorscheme	
 
 call plug#end()
 
