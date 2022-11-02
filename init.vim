@@ -18,6 +18,18 @@ Plug 'junegunn/gv.vim' " git commit viewer
 " Plug 'ryanoasis/vim-devicons'
 " Plug 'bronson/vim-visual-star-search'
 
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+let g:LanguageClient_diagnosticsEnable = 0
+let g:LanguageClient_serverCommands = {
+      \ 'ruby': ['bundle', 'exec', 'srb', 'tc', '--lsp'],
+      \ 'typescript': ['typescript-language-server', '--stdio'],
+      \ 'typescriptreact': ['typescript-language-server', '--stdio'],
+      \ }
+Plug 'Shopify/vim-sorbet', { 'branch': 'main' } " Turns sorbet signatures to comment colorscheme	
+
 call plug#end()
 
 let mapleader = ","
@@ -44,13 +56,16 @@ colorscheme OceanicNext
 " This allows you to run :TS and it will search for the file name. Helpful in
 " ruby with the naming convention
 command! -nargs=* TS call fzf#run(fzf#wrap({ 'options': '--query ' . '"' . expand("%:t") . ' test.rb$"' }))
+nnoremap <silent> <Leader>rg :Rg <C-R><C-W><CR>
 " map <C-s> <esc>:w<CR>
 " imap <C-s> <esc>:w<CR>
 " map <C-t> <esc>:tabnew<CR>
+" Space + s to save current file
+nmap <leader>s :w<cr>
 map <C-h> :nohl<CR>
-map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
-map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
-map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+" map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
+" map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
+" map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
  
  
 " command! -bang -nargs=* Rgp
