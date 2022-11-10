@@ -1,6 +1,7 @@
 # Link files
 
 ln -sf ~/dotfiles/gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
 
 # Install OhMyZSH
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
