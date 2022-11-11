@@ -118,4 +118,6 @@ end
 " 'benmills/vimux'
 let g:VimuxUseNearestPane = 1
 
-
+" 'airblade/vim-gitgutter'
+nmap <C-j> :GitGutterNextHunk<CR>
+nmap <C-k> :GitGutterPrevHunk<CR>
