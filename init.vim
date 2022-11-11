@@ -76,23 +76,13 @@ colorscheme OceanicNext
 " ruby with the naming convention
 command! -nargs=* TS call fzf#run(fzf#wrap({ 'options': '--query ' . '"' . expand("%:t") . ' test.rb$"' }))
 nnoremap <silent> <Leader>rg :Rg <C-R><C-W><CR>
-" map <C-s> <esc>:w<CR>
-" imap <C-s> <esc>:w<CR>
-" map <C-t> <esc>:tabnew<CR>
+nmap <C-f> :FZF<CR>
+nmap <C-t> :TS<CR>
 " Space + s to save current file
 nmap <C-W>m <C-W>\| <C-W>_
 nmap <leader>s :w<cr>
 map <C-h> :nohl<CR>
-" map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
-" map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
-" map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
  
- 
-" command! -bang -nargs=* Rgp
-"   \ call fzf#vim#grep(
-"   \   'rg --line-number --no-heading --color=always --smart-case '. <q-args>, 1,
-"   \   fzf#vim#with_preview({'options': ['--preview-window=up:60%']}), <bang>1)
-
 " ========= Plugin Settings ========
 " 'AndrewRadev/splitjoin.vim'
 let g:splitjoin_trailing_comma = 1
