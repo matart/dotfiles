@@ -101,11 +101,6 @@ let g:splitjoin_ruby_curly_braces = 0
 
 " 'janko-m/vim-test'
 let test#strategy = "vimux"
-function! ClearTransform(cmd) abort
-  return 'clear; ' . a:cmd
-endfunction
-let g:test#custom_transformations = {'clear': function('ClearTransform')}
-let g:test#transformation = 'clear'
 let test#ruby#rspec#executable = 'bundle exec rspec'
 
 " function! TestContext()
@@ -127,6 +122,7 @@ nnoremap <silent> <leader>rl :wa<CR>:TestLast<CR>
 if filereadable(glob("dev.yml"))
   let test#ruby#rspec#executable = 'dev test'
   let test#ruby#minitest = 'dev test'
+  let test#ruby#rails#executable = 'dev test'
 end
 
 " 'benmills/vimux'
