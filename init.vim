@@ -30,6 +30,7 @@ Plug 'tpope/vim-abolish'
 Plug 'henrik/vim-indexed-search'
 Plug 'janko-m/vim-test'
 Plug 'kana/vim-textobj-user'
+Plug 'github/copilot.vim'
 
 " cs - change surround
 " ys - you surround
@@ -38,7 +39,6 @@ Plug 'tpope/vim-surround'
 
 " Plug 'arthurxavierx/vim-caser'
 " Plug 'edkolev/tmuxline.vim'
-" Plug 'github/copilot.vim'
 " Plug 'tpope/vim-rails'
 " Plug 'ryanoasis/vim-devicons'
 " Plug 'bronson/vim-visual-star-search'
@@ -59,7 +59,8 @@ nmap <silent> gd <Plug>(lcn-definition)
 
 call plug#end()
 
-let mapleader = ","
+let mapleader = " "
+nnoremap <SPACE> <Nop>
  
 let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
