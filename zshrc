@@ -27,6 +27,8 @@ alias dev_tc='./bin/srb tc'
 alias dev_rbi='./bin/tapioca dsl'
 alias dev_packages='./bin/packwerk update-deprecations'
 alias r="bin/rails"
+alias logs_server='journalctl --follow --output=json --unit=proc-shopify--shopify@server.service --lines=20000 | /opt/spin/bin/journalfmt'
+alias logs_worker='journalctl --follow --output=json --unit=proc-shopify--shopify@worker.service --lines=20000 | /opt/spin/bin/journalfmt'
 
 
 # Shopify Functions
